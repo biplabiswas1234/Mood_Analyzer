@@ -49,9 +49,8 @@ namespace MoodAnalyzer
             {
                 if (this.message==null || this.message=="")
                 {
-                    Console.WriteLine("Happy");
-                    return "HAPPY";
-                    //throw new CustomException(CustomException.Exceptiontype.EmptyNULL, "Mood should not be Empty or NULL");
+                   
+                    throw new CustomException(CustomException.Exceptiontype.EmptyNULL, "Mood should not be Empty or NULL");
                 }
                 if (this.message.Contains("SAD"))
                 {
@@ -68,7 +67,7 @@ namespace MoodAnalyzer
 
             {
                 //throw new CustomException(CustomException.Exceptiontype.EmptyNULL, "Mood should not be NULL or empty");
-                Console.WriteLine("Happy");
+                Console.WriteLine(ex.Message);
                 return "HAPPY";
             }
 
