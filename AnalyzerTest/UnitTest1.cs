@@ -63,17 +63,16 @@ namespace AnalyzerTest
             Assert.AreEqual(expected, actual);
         }
         //Nullexception handling
-
+        //uc 2
         [Test]
         public void HandleNullExceptionReturnHappy()
         {
             string message = null;
             Mood_Analyzer moodAnalyzer = new Mood_Analyzer(message);
-
             string expected = "HAPPY";
             string actual = moodAnalyzer.AnalyZerMood();
-
             Assert.AreEqual(expected, actual);
         }
+        
     }
 }
