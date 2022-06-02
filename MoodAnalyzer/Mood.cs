@@ -8,26 +8,65 @@ namespace MoodAnalyzer
     {
         public string message;
 
+        public Mood_Analyzer()
+        {
+            this.message = "I am in any mood";
+        }
         public Mood_Analyzer(string message)
         {
             this.message = message;
         }
+        public string AnalyZerMood(string message)
+        {
+            this.message = message;
 
+            try
+            {
+                if (this.message.Contains("SAD"))
+                {
+                    Console.WriteLine("Sad Mood 1");
+                    return "SAD";
+                }
+                else
+                {
+                    Console.WriteLine("Happy Mood 1");
+                    return "HAPPY";
+                }
+            }
+            catch (NullReferenceException)
+            {
+                Console.WriteLine("Happy Mood 1 NULL");
+                return "HAPPY";
+
+            }
+        }
 
         public string AnalyZerMood()
         {
-            if (message.Contains("SAD"))
-            {
-                Console.WriteLine("Sad Mood");
-                return "SAD";
 
-            }
-            else
+            try
             {
-                Console.WriteLine("Happy Mood");
+                if (this.message.Contains("SAD"))
+                {
+                    Console.WriteLine("Sad Mood 2");
+                    return "SAD";
+                }
+                else
+                {
+                    Console.WriteLine("Happy Mood 2");
+                    return "HAPPY";
+                }
+            }
+            catch (NullReferenceException)
+            {
+                Console.WriteLine("Happy Mood 2 NULL");
                 return "HAPPY";
+
             }
 
         }
+        
+
+    
     }
 }
