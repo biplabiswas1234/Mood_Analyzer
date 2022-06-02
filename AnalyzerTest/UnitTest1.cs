@@ -9,7 +9,7 @@ namespace AnalyzerTest
         [SetUp]
         public void Setup()
         {
-            moodAnalyser = new Mood_Analyzer();
+            moodAnalyser = new Mood_Analyzer(" I am in any mood");
         }
         //UC 1.1:Given message "I am in SAD mood" returns SAD
         [Test]
@@ -17,10 +17,10 @@ namespace AnalyzerTest
         {
             //Arrange
             string message = "I am in SAD mood";
-            moodAnalyser = new Mood_Analyzer();
+            moodAnalyser = new Mood_Analyzer(message);
             //Act
             string expected = "SAD";
-            string actual = moodAnalyser.AnalyZerMood(message);
+            string actual = moodAnalyser.AnalyZerMood();
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -30,10 +30,10 @@ namespace AnalyzerTest
         {
             //Arrange
             string message = "I am in any mood";
-            moodAnalyser = new Mood_Analyzer();
+            moodAnalyser = new Mood_Analyzer(message);
             //Act
             string expected = "HAPPY";
-            string actual = moodAnalyser.AnalyZerMood(message);
+            string actual = moodAnalyser.AnalyZerMood();
             //Assert
             Assert.AreEqual(expected, actual);
         }
