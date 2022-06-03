@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,12 +47,7 @@ namespace MoodAnalyzer
 
             try
             {
-                if (this.message==null || this.message=="")
-                {
-                    Console.WriteLine("Happy");
-                    return "HAPPY";
-                    //throw new CustomException(CustomException.Exceptiontype.EmptyNULL, "Mood should not be Empty or NULL");
-                }
+                
                 if (this.message.Contains("SAD"))
                 {
                     Console.WriteLine("Sad Mood 2");
@@ -64,11 +59,10 @@ namespace MoodAnalyzer
                     return "HAPPY";
                 }
             }
-            catch(CustomException ex)
+            catch(NullReferenceException)
 
             {
                 //throw new CustomException(CustomException.Exceptiontype.EmptyNULL, "Mood should not be NULL or empty");
-                Console.WriteLine("Happy");
                 return "HAPPY";
             }
 
